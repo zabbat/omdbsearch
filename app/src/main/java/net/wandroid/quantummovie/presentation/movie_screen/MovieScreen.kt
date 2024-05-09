@@ -69,18 +69,19 @@ fun MovieScreen(
                     }
                 )
             } else {
-
-                val text = if (uiState.searchQuery.isEmpty()) {
-                    stringResource(R.string.movie_screen_search_for_a_movie)
-                } else {
-                    stringResource(R.string.movie_screen_no_movie_found)
+                if (!uiState.isLoading) {
+                    val text = if (uiState.searchQuery.isEmpty()) {
+                        stringResource(R.string.movie_screen_search_for_a_movie)
+                    } else {
+                        stringResource(R.string.movie_screen_no_movie_found)
+                    }
+                    Text(
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.fillMaxWidth(),
+                        text = text,
+                        style = MaterialTheme.typography.bodyLarge
+                    )
                 }
-                Text(
-                    textAlign = TextAlign.Center,
-                    modifier = Modifier.fillMaxWidth(),
-                    text = text,
-                    style = MaterialTheme.typography.bodyLarge
-                )
             }
         }
     }

@@ -71,6 +71,7 @@ class MovieViewModel @Inject constructor(
                 _stateFlow.update {
                     it.copy(
                         searchQuery = event.query,
+                        isLoading = true,
                     )
                 }
                 // delay search with SEARCH_DELAY, and cancel the job if the search query changes.
