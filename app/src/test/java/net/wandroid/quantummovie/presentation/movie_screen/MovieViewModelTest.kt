@@ -51,7 +51,8 @@ class MovieViewModelTest {
         //THEN
         Truth.assertThat(viewModel.stateFlow.value).isEqualTo(
             MovieUiState(
-                searchQuery = " "
+                searchQuery = " ",
+                isLoading = true,
             )
         )
     }
