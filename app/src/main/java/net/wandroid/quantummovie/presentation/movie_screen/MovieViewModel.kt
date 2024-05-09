@@ -53,6 +53,10 @@ class MovieViewModel @Inject constructor(
                 }
 
                 is Resource.Error -> {
+                    // Normally you would not use a text from domain in presentation layer.
+                    // An improvement here would be to use the errorId and look it up against the error codes,
+                    // and then use an appropriate string resource. For this small project however we will assume
+                    // that the error message from domain is ok.
                     _stateFlow.update {
                         it.copy(
                             movie = null,
